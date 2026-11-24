@@ -1,0 +1,7 @@
+numpy==2.3.5
+scipy==1.17.0
+matplotlib==3.10.8
+cantera==3.2.0
+CoolProp==8.1.0
+gmsh==4.15.2
+python-docx==1.2.0

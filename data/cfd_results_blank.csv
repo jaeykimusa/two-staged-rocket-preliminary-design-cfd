@@ -1,0 +1,7 @@
+stage,grid,cells,Pa_Pa,mass_in_kg_s,mass_out_kg_s,Me_massavg,Pe_areaavg_Pa,Te_massavg_K,Ve_massavg_m_s,Vx_massavg_m_s,momentum_integral_N,pressure_integral_N,thrust_N,mass_imbalance_percent
+1,coarse,,101325.0,,,,,,,,,,,
+1,medium,,101325.0,,,,,,,,,,,
+1,fine,,101325.0,,,,,,,,,,,
+2,coarse,,16799.695541035187,,,,,,,,,,,
+2,medium,,16799.695541035187,,,,,,,,,,,
+2,fine,,16799.695541035187,,,,,,,,,,,
