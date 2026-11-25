@@ -1,0 +1,169 @@
+<FluentXMLReport>
+<version>
+Fluent
+Version: axi, dp, dbns imp (axi, double precision, density-based implicit, inviscid)
+Release: 26.1.0
+Title: 
+</version>
+
+<Models>
+
+Models
+------
+
+   Model                        Settings       
+   -----------------------------------------
+   Space                        Axisymmetric   
+   Time                         Steady         
+   Viscous                      Inviscid       
+   Heat Transfer                Enabled        
+   Solidification and Melting   Disabled       
+   Radiation                    None           
+   Species                      Disabled       
+   Coupled Dispersed Phase      Disabled       
+   NOx Pollutants               Disabled       
+   SOx Pollutants               Disabled       
+   Soot                         Disabled       
+   Mercury Pollutants           Disabled       
+   Structure                    Disabled       
+   Acoustics                    Disabled       
+   Eulerian Wall Film           Disabled       
+   Potential/Electrochemistry   Disabled       
+   Multiphase                   Disabled       
+
+</Models>
+
+<MaterialProperties>
+Material Properties
+-------------------
+
+   Material: air (fluid)
+
+      Property             Units      Method      Value(s)    
+      -----------------------------------------------------
+      Density              kg/m^3     ideal-gas   #f          
+      Cp (Specific Heat)   J/(kg K)   constant    2357.8      
+      Molecular Weight     kg/kmol    constant    20.371753   
+
+   Material: aluminum (solid)
+
+      Property   Units   Method   Value(s)   
+      ------------------------------------
+
+</MaterialProperties>
+
+<CellZoneConditions>
+Cell Zone Conditions
+--------------------
+
+   Zones
+
+      name                                           id   type    material   
+      --------------------------------------------------------------------
+      open_cascade_step_translator_7.8_1.1_surface   2    fluid   air        
+
+   Setup Conditions
+
+      open_cascade_step_translator_7.8_1.1_surface
+
+         Condition       Value   
+         ---------------------
+         Material Name   air     
+         Frame Motion?   no      
+         Mesh Motion?    no      
+
+</CellZoneConditions>
+
+<BoundaryConditions>
+Boundary Conditions
+-------------------
+
+   Zones
+
+      name    id   type              
+      ----------------------------
+      exit    6    pressure-outlet   
+      inlet   5    pressure-inlet    
+      wall    7    wall              
+      axis    8    axis              
+
+   Setup Conditions
+
+      exit
+
+         Condition             Value    
+         ----------------------------
+         Gauge Pressure [Pa]   101325   
+
+      inlet
+
+         Condition                                Value     
+         ------------------------------------------------
+         Gauge Total Pressure [Pa]                1000000   
+         Supersonic/Initial Gauge Pressure [Pa]   990000    
+         Total Temperature [K]                    3327.16   
+
+      wall
+
+         Condition   Value   
+         -----------------
+
+      axis
+
+         Condition   Value   
+         -----------------
+
+</BoundaryConditions>
+
+<SolverSettings>
+Solver Settings
+---------------
+
+   Equations
+
+      Equation   Solved   
+      -----------------
+      Flow       yes      
+
+   Numerics
+
+      Numeric                         Enabled   
+      ---------------------------------------
+      Absolute Velocity Formulation   yes       
+
+   Under-Relaxation Factors
+
+      Variable   Relaxation Factor   
+      ----------------------------
+
+   Linear Solver
+
+      Variable   Solver Type   Termination Criterion   Residual Reduction Tolerance   
+      -----------------------------------------------------------------------------
+      Flow       F-Cycle       0.1                                                    
+
+   Discretization Scheme
+
+      Variable   Scheme                
+      ------------------------------
+      Flow       Second Order Upwind   
+
+   Time Marching
+
+      Parameter        Value      
+      -------------------------
+      Solver           Implicit   
+      Courant Number   5          
+
+   Solution Limits
+
+      Quantity                         Limit   
+      --------------------------------------
+      Minimum Absolute Pressure [Pa]   1       
+      Maximum Absolute Pressure [Pa]   5e+10   
+      Minimum Static Temperature [K]   1       
+      Maximum Static Temperature [K]   5000    
+
+</SolverSettings>
+
+</FluentXMLReport>
